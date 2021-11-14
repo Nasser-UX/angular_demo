@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+
+
+@Component({
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss']
+})
+
+
+export class DetailsComponent implements OnInit {
+
+  user : any;
+
+  constructor(private _http: HttpService, private route: ActivatedRoute) {
+    this.route.params.subscribe( params => this.user = params['id'] )
+  }
+
+  ngOnInit(): void {
+    this._http.getUser(this.user).subscribe(data => {
+      this.user = data;
+    })
+  }
+
+}
+
+

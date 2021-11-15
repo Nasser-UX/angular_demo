@@ -7,9 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { PostsComponent } from './posts/posts.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -17,13 +23,19 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ListComponent,
     DetailsComponent,
-    PostsComponent
+    PostsComponent,
+    BootstrapComponent,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    AccordionModule.forRoot(), // very important
+    BsDatepickerModule.forRoot(), // very important
+    BsDropdownModule.forRoot(), // very important
   ],
   providers: [],
   bootstrap: [AppComponent]

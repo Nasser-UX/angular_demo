@@ -35,11 +35,23 @@ header {
       margin: 0;
       display: flex;
 
-      li a {
-        padding: 1em;
+      li {
+        > a {
+          padding: 1em;
 
-        &:hover {
-          background: darken($primary, 10%);
+          &:hover {
+            background: darken($primary, 10%);
+          }
+        }
+        ul {
+          background-color: $primary !important;
+          padding: 0 !important;
+          min-width: 13rem !important;
+
+          a {
+            display: block;
+            padding: 15px;
+          }
         }
       }
     }
